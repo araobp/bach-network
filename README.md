@@ -13,7 +13,7 @@ https://araobp.github.io/bach-network/bach_network.html
 ```
 <------------------- spaCy ---------->  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
 [Original Text]=>[Tokenization]=>[NER]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
-<------------------ Jupyter Notebook --------------------->  <------------ Browser (HTML/CSS/JavaScript) --------------->
+<----------------- bach_network.ipynb -------------------->  <------------------ bach_network.html --------------------->
 ```
 
 Code:

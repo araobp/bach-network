@@ -63,7 +63,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## TODO (Work in Progress)
 
-- Extract paragrahs and page numbers from the [Online Web page HTML file](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) rather than the UTF-8 text file.
+- Extract paragrahs and page numbers from [the online Web page HTML file](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) rather than [the plain text UTF-8 file](https://www.gutenberg.org/cache/epub/35041/pg35041.txt).
 
 ## Dependencies
 

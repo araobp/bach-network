@@ -4,6 +4,8 @@
 
 https://araobp.github.io/bach-network/bach_network.html
 
+<h5>Note: This project is something I worked on independently as self-study during winter break.</h5>
+
 ## Background and Motivation
 
 25 years ago, I lived in Berlin, Germany. Since Berlin is located in the northeastern part of Germany, I listened to a lot of Bach's music. I heard organ music and Christmas Oratorio in Protestant churches. Using Natural Language Processing (NLP) with spaCy, I created a social network diagram of Bach based on [a book on his works](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) obtained from Project Gutenberg. I referred to [Thu Vu's video](https://youtu.be/fAHkJ_Dhr50) on YouTube to learn the technique to generate such a network from a book.

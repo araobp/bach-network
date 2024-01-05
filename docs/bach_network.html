@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Author: https://github.com/araobp -->
+
+<head>
+  <title>Bach Network</title>
+
+  <meta charset="utf-8">
+  
+  <!-- graphology.js and vis.js -->
+  <script src="graphology.min.js"></script>
+  <script>
+    const { UndirectedGraph, DirectedGraph } = graphology;
+  </script>
+  <script src="graphology-library.min.js"></script>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  
+  <!-- Import data from Jupyter Notebook -->
+  <script src="graph_data.js"></script>
+  <script src="paragraphs.js"></script>
+  
+  <!-- Web font -->
+  <link href="https://fonts.cdnfonts.com/css/germania-one" rel="stylesheet">
+
+  <style type="text/css">
+    #container {
+      width: 95vw;
+      height: 90vh;
+    }
+
+    #text {
+      margin: 10px;
+      font-family: 'Germania One', sans-serif;
+    }
+
+    #buttons {
+      margin-bottom: 3px;
+      padding-left: 3px;
+      padding-right: 3px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border: 1px solid lightgray;
+      text-align: right;
+      display: flex;
+      align-items: center;
+    }
+
+    #main {
+      display: flex;
+      flex-flow: row;
+    }
+
+    #mynetwork {
+      width: 60%;
+      height: 70vh;
+      margin-right: 3px;
+      border: 1px solid lightgray;
+      background-color: white;
+    }
+
+    #paragraph {
+      width: 40%;
+      height: 70vh;
+      padding-left: 5px;
+      border: 1px solid lightgray;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      text-align: left;
+      background-color: #FFFCF4;
+    }
+
+    .button {
+      width: 6rem;
+      height: 1.8rem;
+      margin-right: 3px;
+    }
+
+    #selectedNode {
+      width: 20em;
+      font-size: 1.3rem;
+      margin-right: 5px;
+      vertical-align: bottom;
+      display: inline-block;
+      font-family: 'Germania One', sans-serif;
+    }
+
+    .person {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body style="background-color:azure;">
+  <div id="container">
+    <div id="text">
+      <h1>Bach Nework</h1>
+      <p>Click on a node or an edge. Double click on a node to open its Wikipedia page.</p>
+    </div>
+    <div id="buttons">
+      <label id="selectedNode" for="neighbors"></label>
+      <button class="button" type="button" onclick="showNeighbors()">Neighbors</button>
+      <button class="button" type="button" onclick="showGroupMembersOnly()">Group</button>
+      <!-- <button class="button" type="button" onclick="showBFS()">Depth1</button> -->
+      <button class="button" type="button" onclick="showAll()">Reset</button>
+      <div style="margin-left: 10px; margin-right: 3px; font-family: sans-serif; font-size: 0.8rem; width: 20em;">Edge
+        weight threshold:</div>
+      <select name="threshold" id="threshold" onchange="filterGraph(this)">
+        <option value="3">3</option>
+        <option value="2.5">2.5</option>
+        <option value="2">2</option>
+        <option value="1.5" selected="selected">1.5</option>
+        <option value="1" selected="selected">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0">0</option>
+      </select>
+    </div>
+    <div id="main">
+      <div id="mynetwork"></div>
+      <div id="paragraph">...</div>  
+    </div>
+    <a style="font-size: 0.8rem;" href= "https://www.gutenberg.org/ebooks/35041">Source: "Johann Sebastian Bach: His Life, Art, and Work by Johann Nikolaus Forkel
+      Book Cover"</a>
+  </div>
+
+  <script>
+    // graphology.js instance
+    // このインスタンスはコピーしながら使い回しする。
+    const data = { nodes: nodes, edges: edges };
+    const G = UndirectedGraph.from(data);
+
+    var WEIGHT_THRESHOLD = 1
+
+    // 選択ノード
+    var selectedNode = null;
+    const setSelectedNode = (text) => {
+      selectedNode = text;
+      p = document.getElementById("selectedNode");
+      if (text === null) {
+        p.innerText = `...`;
+      } else {
+        p.innerText = `${selectedNode}`;
+      }
+    }
+
+    // Weightを閾値としてEdgeをフィルターしたグラフを生成
+    const filterGraphByWeight = _ => {
+
+      const g = G.copy();
+
+      // Weightを閾値としてEdgeをフィルター
+      g.forEachEdge(key => {
+        if (G.getEdgeAttribute(key, 'value') < WEIGHT_THRESHOLD) {
+          g.dropEdge(key);
+        }
+      });
+
+      // エッジがないノードを削除
+      g.forEachNode(key => {
+        if (g.degree(key) === 0) {
+          g.dropNode(key);
+        }
+      });
+
+      return g;
+    }
+
+    const filterGraph = option => {
+      WEIGHT_THRESHOLD = option.value;
+      lastOperation();
+    }
+
+    // 選択されたノードに隣接するノードのみを含むグラフを生成
+    const showNeighbors = () => {
+      if (selectedNode !== null) {
+        graph = filterGraphByWeight();
+        neighbors = graph.neighbors(selectedNode);
+        neighbors.push(selectedNode);
+        const sub = graphologyLibrary.operators.subgraph(graph, neighbors);
+        createVisNetwork(sub);
+        lastOperation = showNeighbors;
+      }
+    }
+
+    // グループメンバーのみのグラフを生成
+    // 注意）Edge weight threshold を大きな値にした時、エッジなしノードが表示される場合がある。
+    // これは、他のグループのノードへエッジがあるためで、正常な動作。
+    const showGroupMembersOnly = () => {
+      if (selectedNode !== null) {
+        graph = filterGraphByWeight();
+        groupNum = graph.getNodeAttribute(selectedNode, 'group')
+        const groupMembers = graph.filterNodes(key => graph.getNodeAttribute(key, 'group') === groupNum);
+        const sub = graphologyLibrary.operators.subgraph(graph, groupMembers);
+        createVisNetwork(sub);
+        lastOperation = showGroupMembersOnly;
+      }
+    }
+
+    // 選択されたノードからトラバーサル
+    /*
+    const showBFS = () => {
+      if (selectedNode !== null) {
+        bfsNodes = [];
+        graph = filterGraphByWeight();
+        graphologyLibrary.traversal.bfsFromNode(graph, selectedNode, (node, attr, depth) => {
+          console.log(node);
+          bfsNodes.push(node);
+          return depth >= 1;
+        });
+        const sub = graphologyLibrary.operators.subgraph(graph, bfsNodes);
+        createVisNetwork(sub);
+        lastOperation = showBFS;
+      }
+    }
+    */
+
+    // 隣接ノード選択条件をクリアしグラフ再描画
+    const showAll = () => {
+      setSelectedNode(null);
+      // Filter edges with weight threshold
+      graph = filterGraphByWeight();
+      createVisNetwork(graph);
+      lastOperation = showAll;
+    }
+
+    var lastOperation = showAll;
+
+    // Graph visualization with vis.js
+    const createVisNetwork = graph => {
+
+      // Export graph data from graphology.js to vis.js
+      const node_list = graph.mapNodes((node, attr) => {
+        return { id: node, label: node, value: attr.value, color: attr.color };
+      });
+      const edge_list = graph.mapEdges((edge, attr, source, target) => {
+        return { from: source, to: target, value: attr.value, pIdx: attr.pIdx };
+      });
+      var nodes = new vis.DataSet(node_list);
+      var edges = new vis.DataSet(edge_list);
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        nodes: {
+          shape: "dot",
+          scaling: {
+            customScalingFunction: function (min, max, total, value) {
+              return value / total;
+            },
+            min: 7,
+            max: 70,
+          },
+        },
+      };
+
+      var container = document.getElementById('mynetwork');
+      var network = new vis.Network(container, data, options);
+
+      if (selectedNode !== null) {
+        network.setSelection({
+          nodes: [selectedNode]
+        });
+      }
+
+      network.on('click', properties => {
+        if (properties.nodes !== undefined && properties.nodes.length > 0) {
+          const nodeId = properties.nodes[0];
+          setSelectedNode(nodeId);
+        }
+        if (properties.edges !== undefined) {
+          const para = document.getElementById('paragraph');
+          var pIdxs = new Set();
+          properties.edges.forEach(edgeId => {
+            const edge = edges.get(edgeId);
+            const from = edge.from;
+            const weight = edge.value;
+            const to = edge.to;
+            const pIdx = edge.pIdx;
+            pIdx.forEach(pIdx => pIdxs.add(pIdx));
+          });
+
+          var p = '';
+          // Reference: https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
+          pIdxs = Array.from(pIdxs).sort(function (a, b) {  return a - b;  });
+
+          pIdxs.forEach(pIdx => {
+            const paragraph = paragraphs[pIdx];
+            var innerText = ''
+            var lastEnd = 0;
+            spans[pIdx].forEach(s => {
+              const start = s[0];
+              const end = s[1];
+              const beforeText = paragraph.slice(lastEnd, start);
+              const text = paragraph.slice(start, end);
+              innerText += `${beforeText}<span class="person">${text}</span>`;
+              lastEnd = end;
+            });
+            if (lastEnd < paragraph.length) {
+              innerText += paragraph.slice(lastEnd, paragraph.length);
+            }
+            p += `<p>${pIdx}: ${innerText}</p>\n`
+          });
+          para.innerHTML = p;
+        }
+      });
+
+      network.on('doubleClick', properties => {
+        var nodeId = properties.nodes[0];
+
+        node = network.body.nodes[nodeId];
+        node.setOptions({
+          font: {
+            size: 20,
+            color: "#ff7f50"
+          },
+          color: {
+            highlight: "#ff7f50",
+            background: "#ff8f70"
+          }
+        });
+
+        var url = 'https://en.wikipedia.org/wiki/' + nodeId
+        window.open(url, '_blank').focus();
+      });
+    }
+
+    createVisNetwork(G.copy());
+    setSelectedNode(null);
+
+  </script>
+</body>
+
+</html>

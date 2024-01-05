@@ -12,8 +12,7 @@ https://araobp.github.io/bach-network/bach_network.html
 <------------------ Jupyter Notebook --------------------->  <------------ Browser (HTML/CSS/JavaScript) --------------->
 ```
 
-## Grouping
-
+## Grouping of Personal Names
 
 The following is a famous passage also found in the book:
 

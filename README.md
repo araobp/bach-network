@@ -4,7 +4,7 @@
 
 https://araobp.github.io/bach-network/bach_network.html
 
-<h5>Note: This project is something I worked on independently as self-study during winter break.</h5>
+<h5>Note: This project is something I worked on independently as self-study during Y2023-2024 winter break.</h5>
 
 ## Background and Motivation
 

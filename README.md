@@ -60,3 +60,10 @@ How can we accurately perform relation extraction? I devised the method below.
 When names are listed, it might be beneficial to consider them as groups of nodes and connect them with edges to describe relationships between names (nodes) that are mentioned a little apart:
 - Named Entity extraction within a paragraph.
 - If Named Entities are enumerated, perceive them as a group, and adjust the edge weights between Named Entities within the group to be weaker.
+
+## Dependencies
+
+- [spaCy](https://spacy.io/)
+- [networkx](https://networkx.org/documentation/stable/index.html)
+- [graphology.js](https://graphology.github.io/)
+- [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)

@@ -1,4 +1,4 @@
-# Bach network
+# Bach Network
 
 <img src="docs/bach_network.jpg" width=800>
 

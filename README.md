@@ -4,7 +4,7 @@
 
 https://araobp.github.io/bach-network/bach_network.html
 
-## Processing pipeline
+## Processing Pipeline
 
 ```
 <------------------- spaCy ---------->  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->

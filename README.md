@@ -1,4 +1,4 @@
-# Bach Network
+# Bach Network with Natural Language Processing (NLP)
 
 <img src="docs/bach_network.jpg" width=800>
 
@@ -12,12 +12,12 @@ https://araobp.github.io/bach-network/bach_network.html
 
 ## Processing Pipeline
 
-This is a pipeline I devised to generate the network from the book and visualize it on a browser with no external databases.
+This is a pipeline I devised to generate the network from the web book and visualize it on a browser with no external databases.
 
 ```
-<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
-[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
-<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------------------ bach_network.html --------------------->
+<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-- graphology.js --->  <-- vis.js --->
+[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[Graph DB]=>[Subgraph]=>[Visualization]
+<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------ bach_network.html ------------>
 ```
 
 Code:
@@ -64,6 +64,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## Dependencies
 
+- [Beautiful Soap](https://www.crummy.com/software/BeautifulSoup/)
 - [spaCy](https://spacy.io/)
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)

@@ -21,6 +21,7 @@ This is a pipeline I devised to generate the network from the book and visualize
 ```
 
 Code:
+- [ExtractParagraphs.ipynb](ipynb/ExtractParagraphs.ipynb)
 - [bach_network.ipynb](ipynb/bach_network.ipynb)
 - [bach_network.html](docs/bach_network.html)
 

@@ -70,6 +70,6 @@ When names are listed, it might be beneficial to consider them as groups of node
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
 
-## Memories of the time when I lived in Germany
+## Extra: famous drawings
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg" width=600>
+- [Adolph von Menzel: Frederick the Great Playing the Flute at Sanssouci](https://commons.wikimedia.org/wiki/File:Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg)

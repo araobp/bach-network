@@ -15,12 +15,13 @@ https://araobp.github.io/bach-network/bach_network.html
 This is a pipeline I devised to generate the network from the book and visualize it on a browser with no external databases.
 
 ```
-<------------------- spaCy ---------->  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
-[Original Text]=>[Tokenization]=>[NER]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
-<----------------- bach_network.ipynb -------------------->  <------------------ bach_network.html --------------------->
+<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
+[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
+<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------------------ bach_network.html --------------------->
 ```
 
 Code:
+- [paragraphs.ipynb](ipynb/paragraphs.ipynb)
 - [bach_network.ipynb](ipynb/bach_network.ipynb)
 - [bach_network.html](docs/bach_network.html)
 
@@ -60,10 +61,6 @@ How can we accurately perform relation extraction? I devised the method below.
 When names are listed, it might be beneficial to consider them as groups of nodes and connect them with edges to describe relationships between names (nodes) that are mentioned a little apart:
 - Named Entity extraction within a paragraph.
 - If Named Entities are enumerated, perceive them as a group, and adjust the edge weights between Named Entities within the group to be weaker.
-
-## TODO (Work in Progress)
-
-- Extract paragrahs and page numbers from [the online Web page HTML file](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) rather than [the plain text UTF-8 file](https://www.gutenberg.org/cache/epub/35041/pg35041.txt).
 
 ## Dependencies
 

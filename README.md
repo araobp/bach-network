@@ -1,4 +1,4 @@
-# Bach Network
+# Bach Network with Natural Language Processing (NLP)
 
 <img src="docs/bach_network.jpg" width=800>
 

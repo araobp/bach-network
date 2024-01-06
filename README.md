@@ -69,3 +69,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
+
+## Memories of the time when I lived in Germany
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg" width=600>

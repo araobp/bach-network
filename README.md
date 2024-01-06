@@ -64,6 +64,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## Dependencies
 
+- [Beautiful Soap](https://www.crummy.com/software/BeautifulSoup/)
 - [spaCy](https://spacy.io/)
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)

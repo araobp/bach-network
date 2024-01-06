@@ -15,13 +15,13 @@ https://araobp.github.io/bach-network/bach_network.html
 This is a pipeline I devised to generate the network from the book and visualize it on a browser with no external databases.
 
 ```
-<------------------- spaCy ---------->  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
-[Original Text]=>[Tokenization]=>[NER]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
-<----------------- bach_network.ipynb -------------------->  <------------------ bach_network.html --------------------->
+<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-------------- graphology.js ------------>  <-- vis.js --->
+[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[In-Memory Graph DB]=>[Subgraph Extraction]=>[Visualization]
+<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------------------ bach_network.html --------------------->
 ```
 
 Code:
-- [ExtractParagraphs.ipynb](ipynb/ExtractParagraphs.ipynb)
+- [paragraphs.ipynb](ipynb/paragraphs.ipynb)
 - [bach_network.ipynb](ipynb/bach_network.ipynb)
 - [bach_network.html](docs/bach_network.html)
 

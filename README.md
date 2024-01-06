@@ -12,7 +12,7 @@ https://araobp.github.io/bach-network/bach_network.html
 
 ## Processing Pipeline
 
-This is a pipeline I devised to generate the network from the book and visualize it on a browser with no external databases.
+This is a pipeline I devised to generate the network from the web book and visualize it on a browser with no external databases.
 
 ```
 <---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-- graphology.js --->  <-- vis.js --->

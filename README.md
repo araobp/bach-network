@@ -15,9 +15,9 @@ https://araobp.github.io/bach-network/bach_network.html
 This is a pipeline I devised to generate the network from the book and visualize it on a browser with no external databases.
 
 ```
-<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <----- graphology.js ----------->  <-- vis.js --->
-[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[Graph DB]=>[Subgraph Extraction]=>[Visualization]
-<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <----------- bach_network.html ------------------>
+<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-- graphology.js --->  <-- vis.js --->
+[Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[Graph DB]=>[Subgraph]=>[Visualization]
+<-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------ bach_network.html ------------>
 ```
 
 Code:

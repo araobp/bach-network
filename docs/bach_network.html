@@ -87,6 +87,16 @@
     .person {
       background-color: yellow;
     }
+
+    dialog {
+      width: 85vw;
+      height: 90vh;
+    }
+
+    iframe {
+      width: 100%;
+      height: 95%;
+    }
   </style>
 </head>
 
@@ -121,6 +131,11 @@
     <a style="font-size: 0.8rem;" href= "https://www.gutenberg.org/ebooks/35041">Source: "Johann Sebastian Bach: His Life, Art, and Work by Johann Nikolaus Forkel
       Book Cover"</a>
   </div>
+
+  <dialog>
+    <iframe id="web-version">TEST</iframe>
+    <button autofocus onclick="closeModal();">Close</button>
+  </dialog>
 
   <script>
     // graphology.js instance
@@ -226,6 +241,18 @@
 
     var lastOperation = showAll;
 
+    const showModal = pIdx => {
+      const dialog = document.querySelector('dialog');
+      const iframe = document.getElementById('web-version');
+      iframe.setAttribute('src', `${WEB_VERSION_FILE}#p_${pIdx}`);
+      dialog.showModal();
+    }
+
+    const closeModal = _ => {
+      const dialog = document.querySelector('dialog');
+      dialog.close();
+    }
+
     // Graph visualization with vis.js
     const createVisNetwork = graph => {
 
@@ -285,7 +312,7 @@
           var p = '';
           // Reference: https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
           pIdxs = Array.from(pIdxs).sort(function (a, b) {  return a - b;  });
-
+    
           pIdxs.forEach(pIdx => {
             const paragraph = paragraphs[pIdx];
             var innerText = ''
@@ -301,8 +328,7 @@
             if (lastEnd < paragraph.length) {
               innerText += paragraph.slice(lastEnd, paragraph.length);
             }
-            //p += `<p>${pIdx}: ${innerText}</p>\n`
-            p += `<a href=${WEB_VERSION_FILE}#p_${pIdx}>${pIdx}</a>: ${innerText}</p>\n`
+            p += `<a href="javascript:showModal(${pIdx});">${pIdx}</a>: ${innerText}</p>\n`
           });
           para.innerHTML = p;
         }

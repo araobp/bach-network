@@ -74,4 +74,5 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 - [Statue of Johann Sebastian Bach at Thomaskirsche in Leipzig, Germany](https://commons.wikimedia.org/wiki/File:Vxla-jsbach-at-thomaskirsche.jpg)
 - [Thomaskirche Interior](https://en.wikipedia.org/wiki/File:Thomaskirche_Interior.jpg)
+- [Schloss Köthen](https://commons.wikimedia.org/wiki/File:SchlossK%C3%B6then4-2012-2.JPG)
 - [Adolph von Menzel: Frederick the Great Playing the Flute at Sanssouci](https://commons.wikimedia.org/wiki/File:Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg)

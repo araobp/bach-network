@@ -128,7 +128,9 @@
     const data = { nodes: nodes, edges: edges };
     const G = UndirectedGraph.from(data);
 
-    var WEIGHT_THRESHOLD = 1
+    var WEIGHT_THRESHOLD = 1;
+
+    const WEB_VERSION_FILE = 'pg35041-with-ids.html';
 
     // 選択ノード
     var selectedNode = null;
@@ -299,7 +301,8 @@
             if (lastEnd < paragraph.length) {
               innerText += paragraph.slice(lastEnd, paragraph.length);
             }
-            p += `<p>${pIdx}: ${innerText}</p>\n`
+            //p += `<p>${pIdx}: ${innerText}</p>\n`
+            p += `<a href=${WEB_VERSION_FILE}#p_${pIdx}>${pIdx}</a>: ${innerText}</p>\n`
           });
           para.innerHTML = p;
         }

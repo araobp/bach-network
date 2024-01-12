@@ -76,3 +76,4 @@ When names are listed, it might be beneficial to consider them as groups of node
 - [Thomaskirche Interior](https://en.wikipedia.org/wiki/File:Thomaskirche_Interior.jpg)
 - [Schloss Köthen](https://commons.wikimedia.org/wiki/File:SchlossK%C3%B6then4-2012-2.JPG)
 - [Adolph von Menzel: Frederick the Great Playing the Flute at Sanssouci](https://commons.wikimedia.org/wiki/File:Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg)
+- [Samira Spiegel plays: Jesu bleibet meine Freude (J.S. Bach)](https://youtu.be/kGt5i_YT07s)

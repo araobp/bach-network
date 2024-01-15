@@ -25,7 +25,7 @@ Code:
 - [bach_network.ipynb](ipynb/bach_network.ipynb)
 - [bach_network.html](docs/bach_network.html)
 - [map.ipynb](ipynb/map.ipynb)
-- [map.html](docs/map.html)
+- [map.html](https://araobp.github.io/bach-network/map.html)
 
 Note: When dealing with large-scale networks, it is advisable to use a graph database such as neo4j.
 

@@ -4,7 +4,7 @@
 
 https://araobp.github.io/bach-network/bach_network.html
 
-<img src="docs/map.png" height=800>
+<img src="docs/map.png" width=600>
 
 https://araobp.github.io/bach-network/map.html
 

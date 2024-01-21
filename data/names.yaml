@@ -1,0 +1,138 @@
+named_entity:
+- Altnikol
+- Amalia
+- Anna Magdalena
+- "August Friedrich M\xFCller"
+- Augustus II.
+- Augustus III
+- Bach
+- Beethoven
+- Benda
+- Berardi
+- Bruhns
+- Buononcini
+- Buxtehude
+- "B\xF6hm"
+- CARL PHILIPP EMMANUEL BACH
+- Caldara
+- Carl Philipp
+- Carl Philipp Emmanuel
+- Carl Philipp Emmanuel Bach's
+- Carl Philipp Emmanuel's
+- Carl Philipp's
+- Charles
+- Charles III.
+- Christian
+- Christian Weiss
+- Christiana Eberhardine
+- Couperin
+- Dietrich Buxtehude
+- Elias Gottlieb Haussmann
+- Erdmann
+- Ernesti
+- Ernst August
+- Faustina
+- Fischer
+- Flemming
+- Frederick the Great
+- Frescobaldi
+- Fritz Volbach
+- Froberger
+- Fux
+- Georg Philipp Telemann
+- Gesner
+- Goldberg
+- Gottlieb Kortte
+- Grauns
+- "G\xF6rner"
+- H.Bach
+- Handel
+- Hasse
+- Haussmann
+- Hoffmeister
+- Hurlebusch
+- J. C. Gottsched
+- JOHANN CASPAR VOGLER
+- JOHANN CHRISTIAN BACH
+- JOHANN CHRISTOPH FRIEDRICH BACH
+- Johann Abraham Birnbaum
+- Johann Ambrosius
+- Johann Ambrosius Bach
+- Johann August Ernesti
+- Johann Caspar Kerl
+- Johann Christian Hoffmann
+- Johann Christoph
+- Johann Christoph Friedrich's
+- "Johann Gottlieb G\xF6rner"
+- Johann Heinrich Ernesti
+- Johann Matthias Gesner
+- Johann Sebastian
+- Johann Sebastian Bach
+- Johann Sebastian Bach's
+- JohannAdam Reinken
+- Kaiserling
+- Kerl
+- Kirchhoff
+- Kirnberger
+- Kittel
+- Kuhnau
+- "K\xFChnel"
+- Leopold
+- Marchand
+- Maria Amalia
+- Marianne von Ziegler
+- Mizler
+- "M\xFCller"
+- Pachelbel
+- Paul Wagner
+- Peters
+- Philipp Emmanuel
+- Picander
+- Regine Susanna
+- Reinhard Keiser
+- Reinken
+- Scheibe
+- Schiller
+- Silbermann
+- Strungk
+- Taille
+- Telemann
+- Veit Bach
+- Veit Bach's
+- Vivaldi
+- Volumier
+- WILHELM FRIEDEMANN BACH
+- Wilhelm Friedemann
+- Winkler
+- Zelenka
+replace:
+  Amalia: Maria Amalia
+  Anna Magdalena: Anna Magdalena Bach
+  Bach: Johann Sebastian Bach
+  Buxtehude: Dietrich Buxtehude
+  CARL PHILIPP EMMANUEL BACH: Carl Philipp Emanuel Bach
+  Carl Philipp: Carl Philipp Emanuel Bach
+  Carl Philipp Emanuel: Carl Philipp Emanuel Bach
+  Carl Philipp Emmanuel: Carl Philipp Emanuel Bach
+  Carl Philipp Emmanuel Bach's: Carl Philipp Emanuel Bach
+  Carl Philipp Emmanuel's: Carl Philipp Emanuel Bach
+  Carl Philipp's: Carl Philipp Emanuel Bach
+  Charles: Charles III.
+  Christian: Christian Weiss
+  Emmanuel Bach: Carl Philipp Emanuel Bach
+  Frederick II: Frederick the Great
+  Friedemann: Wilhelm Friedemann Bach
+  "G\xF6rner": "Johann Gottlieb G\xF6rner"
+  Haussmann: Elias Gottlieb Haussmann
+  JOHANN CASPAR VOGLER: Johann Caspar Vogler
+  JOHANN CHRISTIAN BACH: Johann Christian Bach
+  JOHANN CHRISTOPH FRIEDRICH BACH: Johann Christoph Friedrich Bach
+  Johann Ambrosius: Johann Ambrosius Bach
+  Johann Christoph: Johann Christoph Bach
+  Johann Sebastian: Johann Sebastian Bach
+  "M\xFCller": "August Friedrich M\xFCller"
+  Regine Susanna: Regine Susanna Bach
+  Sebastian Bach: Johann Sebastian Bach
+  Telemann: Georg Philipp Telemann
+  WILHELM FRIEDEMANN BACH: Wilhelm Friedemann Bach
+  Wilhelm Friedemann: Wilhelm Friedemann Bach

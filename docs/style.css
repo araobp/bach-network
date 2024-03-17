@@ -3,11 +3,6 @@
   height: 90vh;
 }
 
-#text {
-  margin: 10px;
-  font-family: 'Germania One', sans-serif;
-}
-
 #buttons {
   margin-bottom: 3px;
   padding-left: 3px;
@@ -71,4 +66,18 @@ dialog {
 iframe {
   width: 100%;
   height: 95%;
+}
+
+
+.portrait {
+  margin-left: auto;
+  text-align: center;
+}
+
+.portrait div {
+  font-size: 0.8rem;
+}
+
+.portrait img {
+  height: 100px;
 }

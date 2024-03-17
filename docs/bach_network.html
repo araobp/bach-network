@@ -29,9 +29,35 @@
 
 <body style="background-color:azure;">
   <div id="container">
-    <div id="text">
-      <h1>Bach Nework</h1>
-      <p>Click on a node or an edge. Double click on a node to open its Wikipedia page.</p>
+    <div style="display: flex;">
+      <div style="margin: 0; font-family: 'Germania One', sans-serif;">
+        <h1>Bach Nework</h1>
+        <p>Click on a node or an edge.<br>Double click on a node to open its Wikipedia page.</p>
+      </div>
+      <div class="portrait">
+        <img src="portrait/Johann_Sebastian_Bach.jpg">
+        <div>Johann Sebastian Bach</div>
+      </div>
+      <div class="portrait">
+        <img src="portrait/Wilhelm_Friedemann_Bach.png">
+        <div>Wilhelm Friedemann Bach</div>
+      </div>
+      <div class="portrait">
+        <img src="portrait/Carl Philipp Emanuel Bach.jpg">
+        <div>Carl Philipp Emanuel Bach</div>
+      </div>
+      <div class="portrait">
+        <img src="portrait/George_Frideric_Handel.jpeg">
+        <div>George Frideric Handel</div>
+      </div>
+      <div class="portrait">
+        <img src="portrait/Leopold-khoten.jpg">
+        <div>Leopold, Prince of Anhalt-Köthen</div>
+      </div>
+      <div class="portrait">
+        <img src="portrait/Friedrich II.jpg">
+        <div>Friedrich II</div>
+      </div>
     </div>
     <div id="buttons">
       <label id="selectedNode" for="neighbors"></label>
@@ -208,6 +234,9 @@
             max: 200,
           },
         },
+        interaction: {
+          hover: true
+        }
       };
 
       var container = document.getElementById('mynetwork');
@@ -219,7 +248,13 @@
         });
       }
 
+      network.on('hoverNode', properties => {
+        console.log(properties);
+      });
+
       network.on('click', properties => {
+        console.log(properties);
+
         if (properties.nodes !== undefined && properties.nodes.length > 0) {
           const nodeId = properties.nodes[0];
           setSelectedNode(nodeId);

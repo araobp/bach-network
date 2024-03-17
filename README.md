@@ -1,6 +1,6 @@
 # Bach Network with Natural Language Processing (NLP)
 
-<img src="docs/bach_network.jpg" width=800>
+<img src="docs/bach_network.png" width=800>
 
 https://araobp.github.io/bach-network/bach_network.html
 

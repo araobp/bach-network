@@ -1,4 +1,4 @@
-# Bach Network with Natural Language Processing (NLP)
+# J. S. Bach's Network with spaCy(NLP)
 
 <img src="docs/bach_network.png" width=800>
 

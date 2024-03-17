@@ -85,8 +85,8 @@
       Book Cover"</a>
   </div>
 
-  <dialog>
-    <iframe id="web-version">TEST</iframe>
+  <dialog id="web-version-dialog">
+    <iframe id="web-version-file">...</iframe>
     <button autofocus onclick="closeModal();">Close</button>
   </dialog>
 
@@ -195,14 +195,14 @@
     var lastOperation = showAll;
 
     const showModal = pIdx => {
-      const dialog = document.querySelector('dialog');
-      const iframe = document.getElementById('web-version');
+      const dialog = document.getElementById('web-version-dialog');
+      const iframe = document.getElementById('web-version-file');
       iframe.setAttribute('src', `${WEB_VERSION_FILE}#p_${pIdx}`);
       dialog.showModal();
     }
 
     const closeModal = _ => {
-      const dialog = document.querySelector('dialog');
+      const dialog = document.getElementById('web-version-dialog');
       dialog.close();
     }
 
@@ -248,9 +248,9 @@
         });
       }
 
-      network.on('hoverNode', properties => {
-        console.log(properties);
-      });
+      network.once("stabilizationIterationsDone", _ => {
+        console.log('loaded');
+      }); 
 
       network.on('click', properties => {
         console.log(properties);

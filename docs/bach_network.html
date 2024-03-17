@@ -90,6 +90,10 @@
     <button autofocus onclick="closeModal();">Close</button>
   </dialog>
 
+  <dialog id="initializing" style="width: 16rem; height: 1rem; text-align: center;">
+    <div>Initializing...</div>
+  </dialog>
+
   <script>
     // graphology.js instance
     // このインスタンスはコピーしながら使い回しする。
@@ -248,10 +252,6 @@
         });
       }
 
-      network.once("stabilizationIterationsDone", _ => {
-        console.log('loaded');
-      }); 
-
       network.on('click', properties => {
         console.log(properties);
 
@@ -314,6 +314,13 @@
         var url = 'https://en.wikipedia.org/wiki/' + nodeId
         window.open(url, '_blank').focus();
       });
+
+      const dialogInit = document.getElementById('initializing');
+      network.once("stabilizationIterationsDone", _ => {
+        dialogInit.close();
+      });   
+      dialogInit.showModal();  
+
     }
 
     createVisNetwork(G.copy());

@@ -54,6 +54,10 @@
 }
 
 .person {
+  background-color: #d6eaf8;
+}
+
+.selected-person {
   background-color: yellow;
 }
 

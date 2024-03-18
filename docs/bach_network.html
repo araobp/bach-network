@@ -97,8 +97,10 @@
     <button autofocus onclick="closeModal();">Close</button>
   </dialog>
 
-  <dialog id="initializing" style="width: 16rem; height: 1rem; text-align: center;">
+  <dialog id="initializing" style="width: 20rem; height: 1rem; text-align: center;">
     <div>Initializing...</div>
+    <!-- Dummy div for preventing autofucus -->
+    <div tabindex="-1"></div>
   </dialog>
 
   <script>
@@ -289,9 +291,14 @@
             spans[pIdx].forEach(s => {
               const start = s[0];
               const end = s[1];
+              const selectedPerson = s[2];
               const beforeText = paragraph.slice(lastEnd, start);
               const text = paragraph.slice(start, end);
-              innerText += `${beforeText}<span class="person">${text}</span>`;
+              if (selectedPerson == selectedNode) {
+                innerText += `${beforeText}<span class="selected-person">${text}</span>`;
+              } else {
+                innerText += `${beforeText}<span class="person">${text}</span>`;
+              }
               lastEnd = end;
             });
             if (lastEnd < paragraph.length) {

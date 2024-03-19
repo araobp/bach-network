@@ -19,6 +19,20 @@
   <div id="map"></div>
 
   <script>
+    // Reference: https://stackoverflow.com/questions/11652681/replacing-umlauts-in-js
+    const fixUmlauts = v => {
+      v = v.replace(/ä/g, '&auml;');
+      v = v.replace(/ö/g, '&ouml;');
+      v = v.replace(/ü/g, '&uuml;');
+      v = v.replace(/ß/g, '&szlig;');
+      v = v.replace(/Ä/g, '&Auml;');
+      v = v.replace(/Ö/g, '&Ouml;');
+      v = v.replace(/Ü/g, '&Uuml;');
+      return v;
+    }
+  </script>
+
+  <script>
 
     // Magdeburg Hauptbahnhof
     const origin = [52.130692, 11.626788];
@@ -29,9 +43,6 @@
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-
-    //var marker = L.marker(origin).addTo(map);
-    //marker.bindPopup("Whale's Back in Yokohama");
 
     const addCircle = (name, latlng, radius) => {
       var circle = L.circle(latlng, {
@@ -44,24 +55,10 @@
     }
 
     places.forEach(p => {
-      name = p[0];
+      name = fixUmlauts(p[0]);
       latlng = p.slice(2, 4);
-      radius = p[1] * 1000;
+      radius = Math.sqrt(p[1] * 15000000);
       addCircle(name, latlng, radius);
     });
-
-    var popup = L.popup();
-
-    const onMapClick = e => {
-      popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-    }
-
-    map.on('click', onMapClick);
-
-
-
   </script>
 </body>

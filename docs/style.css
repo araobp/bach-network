@@ -19,7 +19,7 @@
   flex-flow: row;
 }
 
-#mynetwork {
+.network {
   width: 60%;
   height: 70vh;
   margin-right: 3px;

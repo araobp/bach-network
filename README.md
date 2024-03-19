@@ -68,12 +68,12 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## Dependencies
 
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 - [spaCy](https://spacy.io/)
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
 - [Leaflet](https://leafletjs.com/)
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 
 ## Extra
 

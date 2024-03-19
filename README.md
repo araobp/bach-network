@@ -73,6 +73,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
+- [Leaflet](https://leafletjs.com/)
 
 ## Extra
 

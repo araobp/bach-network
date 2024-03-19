@@ -3,7 +3,7 @@
 <a href="https://araobp.github.io/bach-network/bach_network.html
 "><img src="docs/bach_network.png" width=800></a>
 
-https://araobp.github.io/bach-network/bach_network.html
+This web app is hosted on: https://araobp.github.io/bach-network/bach_network.html
 
 <h5>Note: This project is something I worked on independently as self-study during Y2023-2024 winter break.</h5>
 

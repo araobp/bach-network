@@ -9,11 +9,11 @@
   <meta name="description" content="Bach Network with NLP">
 
   <!-- graphology.js and vis.js -->
-  <script src="graphology.min.js"></script>
+  <script src="lib/graphology.min.js"></script>
   <script>
     const { UndirectedGraph } = graphology;
   </script>
-  <script src="graphology-library.min.js"></script>
+  <script src="lib/graphology-library.min.js"></script>
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
   <!-- Leaflet-->
@@ -23,15 +23,15 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Import data from Jupyter Notebook -->
-  <script src="graph_data.js"></script>
-  <script src="paragraphs.js"></script>
-  <script src="places.js"></script>
+  <script src="data/graph_data.js"></script>
+  <script src="data/paragraphs.js"></script>
+  <script src="data/places.js"></script>
 
   <!-- Web font -->
   <link href="https://fonts.cdnfonts.com/css/germania-one" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -134,8 +134,8 @@
   </script>
 
   <!-- Load script for this page -->
-  <script src="bach_network.js"></script>
-  <script src="map.js"></script>
+  <script src="script/bach_network.js"></script>
+  <script src="script/map.js"></script>
 
   <script>
     const changeMode = option => {

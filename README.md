@@ -1,6 +1,7 @@
 # J. S. Bach's Network with spaCy(NLP)
 
-<img src="docs/bach_network.png" width=800>
+<a href="https://araobp.github.io/bach-network/bach_network.html
+"><img src="docs/bach_network.png" width=800></a>
 
 https://araobp.github.io/bach-network/bach_network.html
 

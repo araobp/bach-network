@@ -75,6 +75,7 @@ iframe {
 .portrait {
   margin-left: auto;
   text-align: center;
+  padding-left: 3px;
 }
 
 .portrait div {

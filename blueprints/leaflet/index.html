@@ -6,6 +6,7 @@
   <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../../docs/places.js"></script>
   <style>
     #map {
       height: 95vh;
@@ -18,37 +19,48 @@
   <div id="map"></div>
 
   <script>
-    const origin = [35.45254680479768, 139.64826822886536];
 
-    var map = L.map('map').setView(origin, 13);
+    // Magdeburg Hauptbahnhof
+    const origin = [52.130692, 11.626788];
+
+    var map = L.map('map').setView(origin, 7);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    var marker = L.marker(origin).addTo(map);
-    marker.bindPopup("Whale's Back in Yokohama");
-    /*
-    var circle = L.circle(origin, {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 500
-    }).addTo(map);
-    circle.bindPopup("Whale's Back in Yokohama");
-    */
+    //var marker = L.marker(origin).addTo(map);
+    //marker.bindPopup("Whale's Back in Yokohama");
+
+    const addCircle = (name, latlng, radius) => {
+      var circle = L.circle(latlng, {
+        color: '#3333ff',
+        fillColor: '#2200aa',
+        fillOpacity: 0.2,
+        radius: radius
+      }).addTo(map);
+      circle.bindPopup(name);
+    }
+
+    places.forEach(p => {
+      name = p[0];
+      latlng = p.slice(2, 4);
+      radius = p[1] * 1000;
+      addCircle(name, latlng, radius);
+    });
 
     var popup = L.popup();
 
     const onMapClick = e => {
       popup
-      .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
-      .openOn(map);
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
     }
 
     map.on('click', onMapClick);
+
 
 
   </script>

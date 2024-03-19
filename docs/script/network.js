@@ -147,8 +147,6 @@ const createVisNetwork = graph => {
   }
 
   network.on('click', properties => {
-    console.log(properties);
-
     if (properties.nodes !== undefined && properties.nodes.length > 0) {
       const nodeId = properties.nodes[0];
       setSelectedNode(nodeId);

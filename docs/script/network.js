@@ -137,7 +137,7 @@ const createVisNetwork = graph => {
     }
   };
 
-  var container = document.getElementById('mynetwork');
+  var container = document.getElementById('network');
   var network = new vis.Network(container, data, options);
 
   if (selectedNode !== null) {

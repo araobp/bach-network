@@ -102,8 +102,8 @@
       <button class="button" type="button" onclick="showAll()">Reset</button>
     </div>
     <div id="main">
-      <div class="network" id="mynetwork"></div>
-      <div class="network" id="map" style="display: none;"></div>
+      <div class="frame" id="network"></div>
+      <div class="frame" id="map" style="display: none;"></div>
       <div id="paragraph">...</div>
     </div>
     <a style="font-size: 0.8rem;" href="https://www.gutenberg.org/ebooks/35041">Source: "Johann Sebastian Bach: His
@@ -134,20 +134,20 @@
   </script>
 
   <!-- Load script for this page -->
-  <script src="script/bach_network.js"></script>
+  <script src="script/network.js"></script>
   <script src="script/map.js"></script>
 
   <script>
     const changeMode = option => {
       const mode = option.value;
-      const mynetwork = document.getElementById("mynetwork");
+      const network = document.getElementById("network");
       const map = document.getElementById("map");
 
       if (mode === 'network') {
-        mynetwork.style['display'] = "inline";
+        network.style['display'] = "inline";
         map.style['display'] = "none";
       } else if (mode === 'map') {
-        mynetwork.style['display'] = "none";
+        network.style['display'] = "none";
         map.style['display'] = "inline";
         drawMap();
       }   

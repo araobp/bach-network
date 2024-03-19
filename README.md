@@ -1,8 +1,9 @@
 # J. S. Bach's Network with spaCy(NLP)
 
-<img src="docs/bach_network.png" width=800>
+<a href="https://araobp.github.io/bach-network/bach_network.html
+"><img src="docs/bach_network.png" width=800></a>
 
-https://araobp.github.io/bach-network/bach_network.html
+This web app is hosted on: https://araobp.github.io/bach-network/bach_network.html
 
 <h5>Note: This project is something I worked on independently as self-study during Y2023-2024 winter break.</h5>
 
@@ -68,11 +69,12 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## Dependencies
 
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 - [spaCy](https://spacy.io/)
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
+- [Leaflet](https://leafletjs.com/)
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 
 ## Extra
 

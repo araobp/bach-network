@@ -171,7 +171,7 @@ const createVisNetwork = graph => {
         const paragraph = paragraphs[pIdx];
         var innerText = ''
         var lastEnd = 0;
-        spans[pIdx].forEach(s => {
+        spansNames[pIdx].forEach(s => {
           const start = s[0];
           const end = s[1];
           const selectedPerson = s[2];

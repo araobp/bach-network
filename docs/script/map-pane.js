@@ -1,16 +1,4 @@
-// Reference: https://stackoverflow.com/questions/11652681/replacing-umlauts-in-js
-const fixUmlauts = v => {
-  v = v.replace(/ä/g, '&auml;');
-  v = v.replace(/ö/g, '&ouml;');
-  v = v.replace(/ü/g, '&uuml;');
-  v = v.replace(/ß/g, '&szlig;');
-  v = v.replace(/Ä/g, '&Auml;');
-  v = v.replace(/Ö/g, '&Ouml;');
-  v = v.replace(/Ü/g, '&Uuml;');
-  return v;
-}
-
-// Magdeburg Hauptbahnhof
+// Magdeburg Hauptbahnhof as an origin of the map
 const origin = [52.130692, 11.626788];
 
 var map = null;
@@ -37,9 +25,33 @@ const drawMap = _ => {
   }
 
   places.forEach(p => {
-    var name = fixUmlauts(p[0]);
+    var name = convUmlaut(p[0], reverse=false);
     var latlng = p.slice(2, 4);
     var radius = Math.sqrt(p[1] * 15000000);
     addCircle(name, latlng, radius);
+  });
+
+  map.on('popupopen', function (e) {
+    const para = document.getElementById('paragraph');
+
+    const pIdxs = []
+
+    const selectedCity = convUmlaut(e.popup._content, reverse=true);
+    for (const [pIdx, spans] of Object.entries(spansCities)) {
+      var match = false;
+      for (const span of spans) {
+        console.log(`${span[2]} ${selectedCity}`);
+        if (span[2] === selectedCity) {
+          match = true;
+          break;
+        }
+      }
+      if (match) {
+        pIdxs.push(pIdx);
+      }
+    }
+
+    showParagraphs(pIdxs, spansCities, selectedCity);
+
   });
 }

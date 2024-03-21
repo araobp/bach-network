@@ -152,7 +152,7 @@ const createVisNetwork = graph => {
       setSelectedNode(nodeId);
     }
     if (properties.edges !== undefined) {
-      const para = document.getElementById('paragraph');
+
       var pIdxs = new Set();
       properties.edges.forEach(edgeId => {
         const edge = edges.get(edgeId);
@@ -163,33 +163,11 @@ const createVisNetwork = graph => {
         pIdx.forEach(pIdx => pIdxs.add(pIdx));
       });
 
-      var p = '';
+      // Sort elements numerically.
       // Reference: https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
       pIdxs = Array.from(pIdxs).sort(function (a, b) {  return a - b;  });
 
-      pIdxs.forEach(pIdx => {
-        const paragraph = paragraphs[pIdx];
-        var innerText = ''
-        var lastEnd = 0;
-        spansNames[pIdx].forEach(s => {
-          const start = s[0];
-          const end = s[1];
-          const selectedPerson = s[2];
-          const beforeText = paragraph.slice(lastEnd, start);
-          const text = paragraph.slice(start, end);
-          if (selectedPerson == selectedNode) {
-            innerText += `${beforeText}<span class="selected-person">${text}</span>`;
-          } else {
-            innerText += `${beforeText}<span class="person">${text}</span>`;
-          }
-          lastEnd = end;
-        });
-        if (lastEnd < paragraph.length) {
-          innerText += paragraph.slice(lastEnd, paragraph.length);
-        }
-        p += `<a href="javascript:showModal(${pIdx});">${pIdx}</a>: ${innerText}</p>\n`
-      });
-      para.innerHTML = p;
+      showParagraphs(pIdxs, spansNames, selectedNode);      
     }
   });
 

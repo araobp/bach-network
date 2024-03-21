@@ -133,9 +133,13 @@
     const WEB_VERSION_FILE = 'book/pg35041-with-ids.html';
   </script>
 
-  <!-- Load script for this page -->
-  <script src="script/network.js"></script>
-  <script src="script/map.js"></script>
+  <!-- /// Load script for this page /// -->
+  <script src="script/util.js"></script>
+  <!-- Panes in the left half of the page -->
+  <script src="script/network-pane.js"></script>
+  <script src="script/map-pane.js"></script>
+  <!-- A pane in the right half in the page -->
+  <script src="script/paragraph-pane.js"></script>
 
   <script>
     const changeMode = option => {
@@ -150,7 +154,7 @@
         network.style['display'] = "none";
         map.style['display'] = "inline";
         drawMap();
-      }   
+      }
     }
   </script>
 

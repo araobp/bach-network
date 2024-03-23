@@ -156,9 +156,9 @@ const createVisNetwork = graph => {
       var pIdxs = new Set();
       properties.edges.forEach(edgeId => {
         const edge = edges.get(edgeId);
-        const from = edge.from;
-        const weight = edge.value;
-        const to = edge.to;
+        //const from = edge.from;
+        //const weight = edge.value;
+        //const to = edge.to;
         const pIdx = edge.pIdx;
         pIdx.forEach(pIdx => pIdxs.add(pIdx));
       });
@@ -167,7 +167,7 @@ const createVisNetwork = graph => {
       // Reference: https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
       pIdxs = Array.from(pIdxs).sort(function (a, b) {  return a - b;  });
 
-      showParagraphs(pIdxs, spansNames, selectedNode);      
+      showParagraphs(pIdxs, selectedNode);      
     }
   });
 

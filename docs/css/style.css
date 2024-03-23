@@ -53,14 +53,6 @@
   font-family: 'Germania One', sans-serif;
 }
 
-.person {
-  background-color: #d6eaf8;
-}
-
-.selected-person {
-  background-color: yellow;
-}
-
 dialog {
   width: 85vw;
   height: 90vh;
@@ -84,4 +76,18 @@ iframe {
 
 .portrait img {
   height: 100px;
+}
+
+/*** paragraph-pane ***/
+
+.node-in-paragraph {
+  background-color: #bbffbb;
+}
+
+.selected-node-in-paragraph {
+  background-color: yellow;
+}
+
+.node-in-paragraph-sub {
+  background-color: #ffdddd;
 }

@@ -37,10 +37,10 @@ const drawMap = _ => {
     const pIdxs = []
 
     const selectedCity = convUmlaut(e.popup._content, reverse=true);
-    for (const [pIdx, spans] of Object.entries(spansCities)) {
+    for (const [pIdx, spans_] of Object.entries(spans)) {
       var match = false;
-      for (const span of spans) {
-        console.log(`${span[2]} ${selectedCity}`);
+      for (const span of spans_) {
+        //console.log(`${span[2]} ${selectedCity}`);
         if (span[2] === selectedCity) {
           match = true;
           break;
@@ -51,7 +51,7 @@ const drawMap = _ => {
       }
     }
 
-    showParagraphs(pIdxs, spansCities, selectedCity);
+    showParagraphs(pIdxs, selectedCity, nerLabel='GPE');
 
   });
 }

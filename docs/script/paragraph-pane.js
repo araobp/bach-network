@@ -1,4 +1,4 @@
-const showParagraphs = (pIdxs, spansArray, selectedEntity) => {
+const showParagraphs = (pIdxs, selectedEntity, nerLabel='PERSON') => {
 
   const para = document.getElementById('paragraph');
   var p = '';
@@ -8,16 +8,21 @@ const showParagraphs = (pIdxs, spansArray, selectedEntity) => {
     var innerText = ''
     var lastEnd = 0;
 
-    spansArray[pIdx].forEach(s => {
+    spans[pIdx].forEach(s => {
       const start = s[0];
       const end = s[1];
-      const selectedPerson = s[2];
+      const entity = s[2];
+      const label = s[3];  // spaCy NER label
       const beforeText = paragraph.slice(lastEnd, start);
       const text = paragraph.slice(start, end);
-      if (selectedPerson == selectedEntity) {
-        innerText += `${beforeText}<span class="selected-person">${text}</span>`;
+      if (entity === selectedEntity) {
+        innerText += `${beforeText}<span class="selected-node-in-paragraph">${text}</span>`;
       } else {
-        innerText += `${beforeText}<span class="person">${text}</span>`;
+        if (label === nerLabel) {
+          innerText += `${beforeText}<span class="node-in-paragraph">${text}</span>`;
+        } else {
+          innerText += `${beforeText}<span class="node-in-paragraph-sub">${text}</span>`;
+        }
       }
       lastEnd = end;
     });
@@ -27,7 +32,7 @@ const showParagraphs = (pIdxs, spansArray, selectedEntity) => {
 
     p += `<a href="javascript:showModal(${pIdx});">${pIdx}</a>: ${innerText}</p>\n`
   });
-  
+
   para.innerHTML = p;
 
 }

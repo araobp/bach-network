@@ -1,7 +1,5 @@
 # J. S. Bach's Network with spaCy(NLP)
 
-Note: this project has two branches, "main" and "sqlite". ["sqlite" branch](https://github.com/araobp/bach-network/tree/sqlite) uses SQLite and Electron.
-
 <a href="https://araobp.github.io/bach-network/bach_network.html
 "><img src="docs/bach_network.png" width=800></a>
 

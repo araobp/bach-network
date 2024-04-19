@@ -24,8 +24,8 @@ This is a pipeline I devised to generate the network from the web book and visua
 Code:
 - [1. paragraphs.ipynb](ipynb/1.%20paragraphs.ipynb)
 - [2. names.ipynb](ipynb/2.%20names.ipynb)
-- [3. orgs.ipynb](ipynb/3.%20orgs.ipynb)
-- [4. german_cities.ipynb](ipynb/4.%20german_cities.ipynb)
+- [3. german_cities.ipynb](ipynb/3.%20german_cities.ipynb)
+- [4. orgs.ipynb](ipynb/4.%20orgs.ipynb)
 - [5. bach_network.ipynb](ipynb/5.%20bach_network.ipynb)
 - [bach_network.html](docs/bach_network.html)
 

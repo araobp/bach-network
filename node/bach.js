@@ -1,42 +1,21 @@
-// Reference: https://www.educative.io/answers/how-to-open-a-url-in-the-browser-automatically-with-node
-const { platform } = require("os");
-const { exec } = require("child_process");
+const { launchBrowser } = require("./util.js");
+const express = require("express");
+const app = express();
+const PORT = 3000;
 
-const launchBrowser = url => {
-  const WINDOWS_PLATFORM = "win32";
-  const MAC_PLATFORM = "darwin";
+const { names } = require("./db.js");
 
-  const osPlatform = platform();
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
-  if (url === undefined) {
-  }
-
-  var command;
-
-  if (osPlatform === WINDOWS_PLATFORM) {
-    command = `start microsoft-edge:${url}`;
-  } else if (osPlatform === MAC_PLATFORM) {
-    command = `open -a "Google Chrome" ${url}`;
-  } else {
-    command = `google-chrome --no-sandbox ${url}`;
-  }
-
-  console.log(`executing command: ${command}`);
-
-  exec(command);
-};
+app.get("/names", (req, res) => {
+  names(res);
+});
 
 
-const express = require('express')
-const app = express()
-const port = 3000
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
+});
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-launchBrowser(`http://localhost:${port}/`);
+launchBrowser(`http://localhost:${PORT}/`);

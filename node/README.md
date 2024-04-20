@@ -1,4 +1,4 @@
-## Node.js SEA
+# Node.js SEA
 
 ## Reference
 

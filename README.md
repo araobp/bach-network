@@ -21,8 +21,6 @@ This is a pipeline I devised to generate the network from the web book and visua
 <-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------ bach_network.html ------------>
 ```
 
-### Code
-
 - [1. paragraphs.ipynb](ipynb/1.%20paragraphs.ipynb)
 - [2. names.ipynb](ipynb/2.%20names.ipynb)
 - [3. german_cities.ipynb](ipynb/3.%20german_cities.ipynb)
@@ -31,25 +29,6 @@ This is a pipeline I devised to generate the network from the web book and visua
 - [bach_network.html](docs/bach_network.html)
 
 Note: When dealing with large-scale networks, it is advisable to use a graph database such as neo4j.
-
-### Experimental  (Work in Progress)
-
-SEA version of this app.
-
-```
-Single Executable Application
-+---------------------------------------------------+
-|  [node.js/express] <---- REST APIs ---> [Browser] |
-+------- | -----------------------------------------+
-     [SQLite]
-```
-
-Note: unlike Electron, the browser is launched by the script on node.js/express via a shell command.
-
-- [Bach Network with Node.js Single Executable Applications](node)
-
-Reference:
-- https://nodejs.org/api/single-executable-applications.html
 
 ## Generating the Network
 

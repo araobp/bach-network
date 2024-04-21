@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "browser-utils": "file:browser-utils",
-    "db": "file:db",
-    "express": "^4.19.2",
-    "sqlite3": "^5.1.7"
-  }
-}

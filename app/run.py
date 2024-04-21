@@ -5,9 +5,12 @@ from flask import Flask, render_template
 import sqlite3
 import webbrowser
 import json
+import sys
 
 PORT = 5000
-DB_PATH = '../data/bach.db'
+#DB_PATH = '../data/bach.db'
+DB_PATH = sys.argv[1]
+print(DB_PATH)
 
 app = Flask(__name__)
 
@@ -38,5 +41,5 @@ def get_orgs():
 if __name__ == '__main__':
   url = f'http://127.0.0.1:{PORT}'
   webbrowser.open(url, new=0, autoraise=True)
-  app.run()
+  app.run(debug=True)
 

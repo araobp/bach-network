@@ -29,14 +29,16 @@ This is a pipeline I devised to generate the network from the web book and visua
 - [4. orgs.ipynb](ipynb/4.%20orgs.ipynb)
 - [5. bach_network.ipynb](ipynb/5.%20bach_network.ipynb)
 
+All the resulting data is stored in SQLite.
+
 ### Single Page App without SQLite3
 
-All the resulting data is imported to the app in the form of JSON.
+All the resulting data is imported to the web app in the form of JSON.
 - [bach_network.html](docs/bach_network.html)
 
-### Single Executable App with SQLite3
+### Single Executable App with SQLite3 (Work in Progress)
 
-Client-Server archtecture in a single executable app.
+Client-Server archtecture in a single executable app with help from PyInstaller and Flask
 - [app](app)
 
 ## Generating the Network

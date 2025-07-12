@@ -1,4 +1,4 @@
-# J. S. Bach's Network with spaCy(NLP)
+# J. S. Bach's Network with Gemini(NLP)
 
 <a href="https://araobp.github.io/bach-network/bach_network.html
 "><img src="docs/bach_network.png" width=800></a>
@@ -9,14 +9,14 @@ This web app is hosted on: https://araobp.github.io/bach-network/bach_network.ht
 
 ## Background and Motivation
 
-25 years ago, I lived in Berlin, Germany. Since Berlin is located in the northeastern part of Germany, I listened to a lot of Bach's music. I heard organ music and Christmas Oratorio in Protestant churches. Using Natural Language Processing (NLP) with spaCy, I created a social network diagram of Bach based on [a book on his works](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) obtained from Project Gutenberg. I referred to [Thu Vu's video](https://youtu.be/fAHkJ_Dhr50) on YouTube to learn the technique to generate such a network from a book. To create a more satisfying network, I made further improvements myself.
+25 years ago, I lived in Berlin, Germany. Since Berlin is located in the northeastern part of Germany, I listened to a lot of Bach's music. I heard organ music and Christmas Oratorio in Protestant churches. Using Natural Language Processing (NLP) with Gemini, I created a social network diagram of Bach based on [a book on his works](https://www.gutenberg.org/cache/epub/35041/pg35041-images.html) obtained from Project Gutenberg. I referred to [Thu Vu's video](https://youtu.be/fAHkJ_Dhr50) on YouTube to learn the technique to generate such a network from a book. To create a more satisfying network, I made further improvements myself.
 
 ## Processing Pipeline
 
 This is a pipeline I devised to generate the network from the web book and visualize it on a browser with no external databases.
 
 ```
-<---- beauifulsoap ---->  <----- spaCy ------>  <--- networkx ---->  <-- graphology.js --->  <-- vis.js --->
+<---- beauifulsoap ---->  <----- Gemini ------>  <--- networkx ---->  <-- graphology.js --->  <-- vis.js --->
 [Web book]=>[Paragraphs]=>[NER/DepenencyGraph]=>[Network Formation]=>[Graph DB]=>[Subgraph]=>[Visualization]
 <-- paragraphs.ipynb -->  <-------- bach_network.ipynb ----------->  <------ bach_network.html ------------>
 ```
@@ -78,7 +78,7 @@ When names are listed, it might be beneficial to consider them as groups of node
 
 ## Dependencies
 
-- [spaCy](https://spacy.io/)
+- [Gemini](https://gemini.google.com/)
 - [networkx](https://networkx.org/documentation/stable/index.html)
 - [graphology.js](https://graphology.github.io/)
 - [vis.js (Network)](https://visjs.github.io/vis-network/docs/network/)
